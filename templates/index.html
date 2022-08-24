@@ -4,9 +4,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkerboard - Home</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Checkerboard</title>
 </head>
 <body>
-    <h1>Home of Checkerboard</h1>
+    <div class="container">
+        <h1 style="background-color: {{color1}}; color: {{color2}};">***Checkerboard***</h1>
+        <table>
+            <tbody>
+                {% for i in range(x) %}
+                    <tr>
+                        {% for j in range(y) %}
+                            {% if (i+j) % 2 == 0 %}
+                                <td class="tile" style="background-color: {{color1}};"></td>
+                            {% else %}
+                            <td class="tile" style="background-color: {{color2}};"></td>
+                            {% endif %}
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
